@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iscalaa IT — Soluciones en TI</title>
+  <meta name="description" content="Iscalaa IT: soporte técnico, infraestructura, desarrollo y consultoría TI para empresas." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#0b74d1; 
+      --dark:#0f1724;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --radius:12px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--dark);line-height:1.5}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+
+    /* Header */
+    header{background:linear-gradient(90deg, rgba(11,116,209,0.06), rgba(11,116,209,0.02));}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .brand img{height:52px;width:auto;border-radius:8px}
+    .brand h1{font-size:1.05rem;margin:0}
+    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    nav a{text-decoration:none;color:var(--dark);font-weight:600}
+    .cta{background:var(--primary);color:#fff;padding:.5rem .9rem;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Mobile */
+    .mobile-toggle{display:none;background:none;border:0;font-size:1.2rem}
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;gap:1.25rem}
+      .mobile-toggle{display:block}
+      nav ul{display:none}
+      .brand img{height:44px}
+    }
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center;padding:3rem 0}
+    .hero h2{font-size:2rem;margin:0 0 .5rem}
+    .hero p{color:var(--muted);margin:0 0 1.25rem}
+    .hero .actions{display:flex;gap:.75rem}
+    .card{background:var(--card);border-radius:var(--radius);padding:1rem;box-shadow:0 6px 18px rgba(15,23,36,.06)}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0}
+    .service{padding:1rem;border-radius:10px}
+    .service h3{margin:.5rem 0 0}
+    .service p{margin:.5rem 0;color:var(--muted);font-size:.95rem}
+
+    /* Split */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+
+    /* Contact */
+    form{display:grid;gap:.6rem}
+    input,textarea,select{padding:.6rem;border-radius:8px;border:1px solid #e6e9ee;background:white}
+    button{background:var(--primary);color:white;border:0;padding:.6rem .9rem;border-radius:8px;font-weight:700}
+
+    /* Footer */
+    footer{padding:2rem 0;color:var(--muted);font-size:.95rem}
+
+    .muted{color:var(--muted)}
+    .small{font-size:.9rem}
+    .center{text-align:center}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- ✅ LOGO CORRECTO -->
+        <img src="logo.png" alt="Logo">
+        <div>
+          <h1>Iscalaa IT</h1>
+          <div class="small muted">Soluciones y soporte en tecnologías de la información</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="mobile-toggle" aria-expanded="false">☰</button>
+        <ul id="mainNav">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a class="cta" href="https://wa.me/525618249191" target="_blank">WhatsApp</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div>
+        <h2>Soporte TI, infraestructura y desarrollo a la medida</h2>
+        <p>Soluciones profesionales para empresas: redes, soporte técnico y sistemas.</p>
+        <div class="actions">
+          <a class="cta" href="https://wa.me/525618249191" target="_blank">Contactar</a>
+          <a href="#servicios" class="small">Ver servicios →</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 class="center">Solicitud rápida</h3>
+        <form id="quickForm">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="tel" name="telefono" placeholder="Teléfono" required>
+          <select name="servicio">
+            <option value="soporte">Soporte técnico</option>
+            <option value="infra">Infraestructura y redes</option>
+            <option value="desarrollo">Desarrollo de software</option>
+            <option value="consultoria">Consultoría</option>
+          </select>
+          <textarea name="mensaje" rows="3" placeholder="Describe lo que necesitas"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+        <div id="msg" class="small muted center" style="display:none;margin-top:.7rem;">Gracias, te contactaremos.</div>
+      </aside>
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="services">
+        <div class="card service">
+          <h3>Soporte técnico</h3>
+          <p>Mantenimiento de equipos, diagnóstico y solución de fallas.</p>
+        </div>
+        <div class="card service">
+          <h3>Infraestructura y redes</h3>
+          <p>Instalación de redes, servidores y seguridad informática.</p>
+        </div>
+        <div class="card service">
+          <h3>Desarrollo a medida</h3>
+          <p>Aplicaciones web y automatización de procesos.</p>
+        </div>
+        <div class="card service">
+          <h3>Consultoría</h3>
+          <p>Estrategias tecnológicas para optimizar tu negocio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="split">
+      <div class="card">
+        <h2>Sobre Iscalaa IT</h2>
+        <p class="muted">Empresa especializada en soluciones TI para PYMEs.</p>
+        <ul>
+          <li>Atención personalizada</li>
+          <li>Servicios escalables</li>
+          <li>Respaldo profesional</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Clientes y alianzas</h3>
+        <p class="muted">Empresas de diferentes sectores confían en nosotros.</p>
+        <img src="https://via.placeholder.com/120x60?text=Cliente" alt="">
+      </div>
+    </section>
+
+    <section id="contacto" class="split">
+      <div class="card">
+        <h3>Contacto</h3>
+        <p class="muted">
+          Tel: +52 56 1824 9191<br>
+          Email: info@iscalaait.com.mx
+        </p>
+        <a class="cta" href="https://wa.me/525618249191" target="_blank">WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Ubicación</h3>
+        <div style="margin-top: 30px;">
+          <iframe
+            width="100%"
+            height="350"
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=19.6853747,-99.1440140&z=18&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Iscalaa IT</strong> — © 2025 Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const quickForm = document.getElementById('quickForm');
+    const msg = document.getElementById('msg');
+    quickForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      quickForm.style.display='none';
+      msg.style.display='block';
+    });
+  </script>
+</body>
+</html>
